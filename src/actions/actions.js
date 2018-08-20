@@ -14,22 +14,27 @@ export const fetchSuccess = (json) => ({
 });
 
 // Failure
-export const fetchFailure = (error) ({
+export const fetchFailure = (error) => ({
     type: FETCH_NEWS_FAILURE,
     payload: { error }
 });
 
-const url = 'http://reddit.com/search?q=';
+const url = 'https://www.reddit.com/r/';
+const uplifting = 'UpliftingNews/hot.json';
+const sports = 'sports/hot.json';
+const usNews = 'USNEWS/hot.json';
+const politics = 'politics/hot.json';
+
 
 // Fetch the data. Called with filterBy.
 // filterBy will filter the news categories.
-export const fetchNews = (filterBy) => dispatch => {
+export const fetchNews = () => dispatch => {
     dispatch(beginFetch());
-    fetch(`${url}${filterBy}`)
+    fetch(`${url}${sports}`)
         .then(handleErrors)
         .then(res => res.json())
         .then(json => {
-            dispatch(fetchSuccess(json));
+            dispatch(fetchSuccess(json.data.children.map(item => item.data)));
         })
         .catch((error) => dispatch(fetchFailure(error)))
 };
