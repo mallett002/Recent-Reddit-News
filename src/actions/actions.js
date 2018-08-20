@@ -19,18 +19,11 @@ export const fetchFailure = (error) => ({
     payload: { error }
 });
 
-const url = 'https://www.reddit.com/r/';
-const uplifting = 'UpliftingNews/hot.json';
-const sports = 'sports/hot.json';
-const usNews = 'USNEWS/hot.json';
-const politics = 'politics/hot.json';
-
-
 // Fetch the data. Called with filterBy.
 // filterBy will filter the news categories.
-export const fetchNews = () => dispatch => {
+export const fetchNews = (endpoint) => dispatch => {
     dispatch(beginFetch());
-    fetch(`${url}${sports}`)
+    fetch(`https://www.reddit.com/r/${endpoint}`)
         .then(handleErrors)
         .then(res => res.json())
         .then(json => {
