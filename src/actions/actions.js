@@ -3,18 +3,18 @@ export const FETCH_NEWS_SUCCESS = 'FETCH_NEWS_SUCCESS';
 export const FETCH_NEWS_FAILURE = 'FETCH_NEWS_FAILURE';
 
 // Begin
-export const beginFetch = () => ({
+const beginFetch = () => ({
     type: FETCH_NEWS_BEGIN
 });
 
 // Success
-export const fetchSuccess = (json) => ({
+const fetchSuccess = (json) => ({
     type: FETCH_NEWS_SUCCESS,
     payload: { json }
 });
 
 // Failure
-export const fetchFailure = (error) => ({
+const fetchFailure = (error) => ({
     type: FETCH_NEWS_FAILURE,
     payload: { error }
 });
