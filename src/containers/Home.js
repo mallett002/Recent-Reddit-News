@@ -3,12 +3,21 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { fetchNews } from '../actions/actions';
+import { getEndpoint } from '../constants/constants';
+// Imported Components:
+import Header from '../components/Header';
+
 
 class Home extends Component {
 
+    // Fetch US News when component mounts
     componentDidMount() {
-        const { fetchNews } = this.props;
-        fetchNews();
+        this.props.fetchNews(getEndpoint('usNews'));
+    }
+
+    // Fetch when click on different category buttons
+    handleFetch = (endpoint) => {
+        this.props.fetchNews(endpoint)
     }
 
     renderErrorMessage() {
@@ -27,7 +36,8 @@ class Home extends Component {
     render() {
         return (
             <div>
-                HOME
+                <h1>REDDIT NEWS</h1>
+                <Header handleFetch={this.handleFetch} />
             </div>
         )
     }
