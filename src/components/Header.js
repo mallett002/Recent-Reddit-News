@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import NewsType from './NewsType';
 
 const Header = ({ handleFetch }) => (
-        <div>
+        <div className='nav'>
             <NewsType child='US News' handleFetch={handleFetch} category='usNews' />
             <NewsType child='Sports' handleFetch={handleFetch} category='sports' />
             <NewsType child='Politics' handleFetch={handleFetch} category='politics' />

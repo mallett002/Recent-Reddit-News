@@ -1,11 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { getEndpoint } from '../constants/constants';
+import { NavLink } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 const NewsType = ({ child, handleFetch, category }) => (
-    <button onClick={ () => handleFetch(getEndpoint(category))}>
-        {child}
-    </button>
+    <NavLink className='navlink'
+        onClick={ () => handleFetch(getEndpoint(category))}
+        to={`/${category}`}
+    >
+        <Button variant="contained" color="primary">
+            {child}
+        </Button>
+       
+    </NavLink>
 );
 
 NewsType.propTypes = {

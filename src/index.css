@@ -1,5 +1,20 @@
+/* Core Styles */
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+
+/*-------------News Display---------------*/
+.nav {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
 }

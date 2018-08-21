@@ -1,19 +1,16 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Route } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import { fetchNews } from '../actions/actions';
 import { getEndpoint } from '../constants/constants';
 // Imported Components:
 import Header from '../components/Header';
+import NewsDisplay from '../components/NewsDisplay';
 
 
 class Home extends Component {
-
-    // Fetch US News when component mounts
-    componentDidMount() {
-        this.props.fetchNews(getEndpoint('usNews'));
-    }
 
     // Fetch when click on different category buttons
     handleFetch = (endpoint) => {
@@ -38,6 +35,7 @@ class Home extends Component {
             <div>
                 <h1>REDDIT NEWS</h1>
                 <Header handleFetch={this.handleFetch} />
+                <Route path='/:type' component={NewsDisplay} />
             </div>
         )
     }
