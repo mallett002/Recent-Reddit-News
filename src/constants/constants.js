@@ -13,3 +13,6 @@ export const getEndpoint = (category) => {
             return 'USNEWS/hot.json';
         }  
 };
+
+// Blue color for App:
+export const blue = '#2196f3';
