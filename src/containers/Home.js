@@ -31,11 +31,19 @@ class Home extends Component {
     }
 
     render() {
+        const { data, errorMessage }  = this.props;
+        console.log(data);
         return (
             <div>
                 <h1>REDDIT NEWS</h1>
                 <Header handleFetch={this.handleFetch} />
-                <Route path='/:type' component={NewsDisplay} />
+
+                {/*Tell User to select a category, or display the news*/}
+                {data === undefined && !errorMessage 
+                ? <p>Select a news category</p>
+                : <Route path='/:type' component={NewsDisplay} />}
+                {/*TODO <Error />  I'll make a component for rendering the error*/}
+                
             </div>
         )
     }
