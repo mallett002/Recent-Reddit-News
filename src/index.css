@@ -9,7 +9,9 @@ a {
   text-decoration: none;
 }
 
-
+li {
+  list-style: none;
+}
 
 
 /*-------------News Display---------------*/
@@ -17,4 +19,8 @@ a {
   display: flex;
   justify-content: center;
   text-decoration: none;
+}
+
+img {
+  width: 500px;
 }

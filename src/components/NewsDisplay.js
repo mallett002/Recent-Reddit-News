@@ -1,26 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// TODO import NewsCard from './NewsCard';
+import NewsCard from './NewsCard';
 
-const NewsDisplay = ({ match }) => (
+const NewsDisplay = ({ match, data }) => (
     <div>   
-        <h1>{match.params.type.toUpperCase()}</h1>
-        <hr style={{
-            margin: '0, auto', 
-            width: '70%'
-        }} />
-        {/*TODO
-        <ul>
-            // map over data
-            props.data.json.map(item => { // each item is an obj with info
-                <NewsCard info={item} />
-            })
-        </ul>*/}
+        <p>{match.params.type.toUpperCase()}</p>
+        <ul> {/*Only return 10 of them*/}
+            {data.json.slice(0, 10).map((item, index) => ( 
+                <NewsCard info={item} key={index} />
+            ))}
+        </ul>
     </div>
 );
 
 NewsDisplay.propTypes = {
-    match: PropTypes.object.isRequired
+    match: PropTypes.object.isRequired,
+    data: PropTypes.object.isRequired
 };
 
 export default NewsDisplay;
