@@ -24,3 +24,42 @@ li {
 img {
   width: 500px;
 }
+
+/* NewsCard */
+.card {
+  color: black;
+  background-position: 0 -60px !important;
+  background-size: cover !important;
+  height: 260px;
+  position: relative;
+  border-radius: 10px;
+  width: 80%;
+  margin: 1em auto;
+  transition: transform .2s linear;
+}
+.card:hover {
+  transform: scale(1.01);
+}
+
+.card-info {
+  position: absolute;
+  bottom: -2px;
+  width: 100%;
+  background: #f5f5f5;
+  border-radius: 0 0 10px 10px;
+  padding: 10px 11px;
+  box-sizing: border-box;
+}
+
+.card-info h3 {
+  margin: 0;
+}
+
+.when-where {
+  display: flex;
+  justify-content: space-between;
+}
+
+.when-where p {
+  margin: 5px 0;
+}

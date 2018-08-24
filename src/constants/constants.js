@@ -14,5 +14,10 @@ export const getEndpoint = (category) => {
         }  
 };
 
-// Blue color for App:
-export const blue = '#2196f3';
+export const getColor = (str) => {
+    const upper = str.toUpperCase();
+    if (upper === 'USNEWS') return '#2196f3';
+    if (upper === 'SPORTS') return '#e29f30';
+    if (upper === 'POLITICS') return '#70ab70';
+    if (upper === 'UPLIFTING') return '#ad5454';
+};
