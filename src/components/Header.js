@@ -4,10 +4,10 @@ import NewsType from './NewsType';
 
 const Header = ({ handleFetch }) => (
         <div className='nav'>
-            <NewsType child='US News' handleFetch={handleFetch} category='usNews' />
-            <NewsType child='Sports' handleFetch={handleFetch} category='sports' />
-            <NewsType child='Politics' handleFetch={handleFetch} category='politics' />
-            <NewsType child='Uplifting' handleFetch={handleFetch} category='uplifting' />
+            <NewsType child='US News' handleFetch={handleFetch} category='usNews' buttonColor='#2196f3' />
+            <NewsType child='Sports' handleFetch={handleFetch} category='sports' buttonColor='#e29f30' />
+            <NewsType child='Politics' handleFetch={handleFetch} category='politics' buttonColor='#70ab70' />
+            <NewsType child='Uplifting' handleFetch={handleFetch} category='uplifting' buttonColor='#ad5454' />
         </div>
 );
 

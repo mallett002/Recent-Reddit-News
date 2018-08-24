@@ -21,9 +21,9 @@ const fetchFailure = (error) => ({
 
 // Fetch the data. Called with filterBy.
 // filterBy will filter the news categories.
-export const fetchNews = (endpoint) => dispatch => {
+export const fetchNews = (subreddit) => dispatch => {
     dispatch(beginFetch());
-    fetch(`https://www.reddit.com/r/${endpoint}`)
+    fetch(`https://www.reddit.com/r/${subreddit}`)
         .then(handleErrors)
         .then(res => res.json())
         .then(json => {
