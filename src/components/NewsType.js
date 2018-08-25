@@ -4,13 +4,21 @@ import { getEndpoint } from '../constants/constants';
 import { NavLink } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
-const NewsType = ({ child, handleFetch, category, buttonColor }) => (
+// NewsType renders a button wrapped in a NavLink from React Router.
+// When clicked, it will call fetchNews through props, which will dispatch the action to fetch the data.
+// The selected button will be a little larger than the rest, and will cause the <hr /> to render the 
+// corresponding color.
+const NewsType = ({ child, handleFetch, category, buttonColor, handleClick, selected }) => (
     <NavLink className='navlink'
         onClick={ () => handleFetch(getEndpoint(category))}
         to={`/${category}`}
     >
         <Button 
-            style={{ backgroundColor: buttonColor, color: 'white' }} 
+            onClick={() => handleClick(category)}
+            style={Object.assign({}, 
+                { backgroundColor: buttonColor, color: 'white' },
+                selected === category && { transform: 'scale(1.1)'}
+            )} 
             variant="contained">
             {child}
         </Button>

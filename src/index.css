@@ -13,6 +13,17 @@ li {
   list-style: none;
 }
 
+/*------------HEADER------------*/
+.header {
+  margin: 0 auto;
+}
+
+.header-hr {
+  height: 4px;
+  border: none;
+  background: #f5f5f5;
+}
+
 
 /*-------------News Display---------------*/
 .nav {
