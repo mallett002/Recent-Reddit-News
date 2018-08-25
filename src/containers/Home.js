@@ -7,17 +7,23 @@ import { fetchNews } from '../actions/actions';
 // Imported Components:
 import Header from '../components/Header';
 import NewsDisplay from '../components/NewsDisplay';
+import { getEndpoint } from '../constants/constants'
 
 
 class Home extends Component {
+    // Fetch world news when component mounts
+    componentDidMount() {
+        this.props.fetchNews(getEndpoint('worldnews'));
+    }
+
     // Fetch when click on different category buttons
     handleFetch = (endpoint) => {
-        this.props.fetchNews(endpoint)
+        this.props.fetchNews(endpoint);
     }
 
     // TODO- Make <Error /> component and render it below <Header />
     renderErrorMessage() {
-        const { errorMessage } = this.props
+        const { errorMessage } = this.props;
         if (!errorMessage) {
             return null
         }
@@ -32,8 +38,8 @@ class Home extends Component {
     render() {
         const { data, errorMessage }  = this.props;
         return (
-            <div>
-                <h1>REDDIT NEWS</h1>
+            <div style={{textAlign: 'center'}}>
+                <h1>RECENT NEWS</h1>
                 <Header handleFetch={this.handleFetch} />
 
                 {/*Tell User to select a category, or display the news*/}

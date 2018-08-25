@@ -13,11 +13,11 @@ const NewsType = ({ child, handleFetch, category, buttonColor, handleClick, sele
         onClick={ () => handleFetch(getEndpoint(category))}
         to={`/${category}`}
     >
-        <Button 
+        <Button id='btn'
             onClick={() => handleClick(category)}
             style={Object.assign({}, 
                 { backgroundColor: buttonColor, color: 'white' },
-                selected === category && { transform: 'scale(1.1)'}
+                selected === category && { padding: '13px 14px' }
             )} 
             variant="contained">
             {child}

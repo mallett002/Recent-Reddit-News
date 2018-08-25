@@ -21,7 +21,7 @@ const NewsCard = ({ info }) => (
                 </div>
 
               </div>
-            : <div>
+            : <div className='photolessCard'>
                 <p>{info.domain}</p>
                 <p>{info.title}</p>
               </div>}

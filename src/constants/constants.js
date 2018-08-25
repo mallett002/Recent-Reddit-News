@@ -5,8 +5,8 @@ export const getEndpoint = (category) => {
             return 'UpliftingNews/hot/.json?raw_json=1';
         case 'sports':
             return 'sports/hot/.json?raw_json=1';
-        case 'usNews':
-            return 'USNEWS/hot/.json?raw_json=1';
+        case 'worldnews':
+            return 'worldnews/hot/.json?raw_json=1';
         case 'politics':
             return 'politics/hot/.json?raw_json=1';
         default: 
