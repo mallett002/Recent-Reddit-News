@@ -29,7 +29,10 @@ const NewsType = ({ child, handleFetch, category, buttonColor, handleClick, sele
 NewsType.propTypes = {
     child: PropTypes.string.isRequired,
     handleFetch: PropTypes.func.isRequired,
-    category: PropTypes.string.isRequired
+    category: PropTypes.string.isRequired,
+    buttonColor: PropTypes.string.isRequired,
+    handleClick: PropTypes.func.isRequired,
+    selected: PropTypes.string.isRequired
 };
 
 export default NewsType;
