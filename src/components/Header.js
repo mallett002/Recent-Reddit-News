@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import NewsType from './NewsType';
 
 const hrStyles = {
-    worldNews: { background: '#F4CC70' },
-    sports: { background: '#DE7A22' },
-    politics: { background: '#20948B' },
-    uplifting: { background: '#6AB187' },
+    worldNews: { background: '#DE7A22' },
+    sports: { background: '#F4CC70' },
+    politics: { background: '#6AB187' },
+    uplifting: { background: '#20948B' },
 };
 
 
@@ -25,10 +25,10 @@ class Header extends Component {
         return (
             <div className='header'>
                 <div className='nav'>
-                    <NewsType child='World News' handleFetch={handleFetch} category='worldnews' buttonColor='#F4CC70' handleClick={this.handleSelected} selected={selected} />
-                    <NewsType child='Sports' handleFetch={handleFetch} category='sports' buttonColor='#DE7A22' handleClick={this.handleSelected} selected={selected} />
-                    <NewsType child='Politics' handleFetch={handleFetch} category='politics' buttonColor='#20948B' handleClick={this.handleSelected} selected={selected} />
-                    <NewsType child='Uplifting' handleFetch={handleFetch} category='uplifting' buttonColor='#6AB187' handleClick={this.handleSelected} selected={selected} />
+                    <NewsType child='World News' handleFetch={handleFetch} category='worldnews' buttonColor='#DE7A22' handleClick={this.handleSelected} selected={selected} />
+                    <NewsType child='Sports' handleFetch={handleFetch} category='sports' buttonColor='#F4CC70' handleClick={this.handleSelected} selected={selected} />
+                    <NewsType child='Politics' handleFetch={handleFetch} category='politics' buttonColor='#6AB187' handleClick={this.handleSelected} selected={selected} />
+                    <NewsType child='Uplifting' handleFetch={handleFetch} category='uplifting' buttonColor='#20948B' handleClick={this.handleSelected} selected={selected} />
                 </div>
                 <hr className='header-hr'
                     style={Object.assign({}, 
@@ -42,7 +42,6 @@ class Header extends Component {
         )
     }
 }
-
 
 Header.propTypes = {
     handleFetch: PropTypes.func.isRequired
