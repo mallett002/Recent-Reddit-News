@@ -1,32 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const backgroundStyles = {
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat'
-}
-
+// If there is an image available render a NewsCard with an image.
+// Otherwise render an imageless NewsCard
 const NewsCard = ({ info }) => (
-    <a href={info.url} target="_blank" rel="noopener noreferrer">
-    <li>
-        {info.preview !== undefined 
-            ? <div className='card' style={{background: `url(${info.preview.images[0].source.url})`, ...backgroundStyles}}>
-                <div className='card-info'>
-                    <h3>{info.title}</h3>
+    <li className='item'>
+        <a href={info.url} target="_blank" rel="noopener noreferrer">
+            {info.preview
+                ? <div className='card'>
+                    <div className='img-wrapper'>
+                        <img src={`${info.preview.images[0].source.url}`} alt={info.domain} />
+                    </div>
+                    <div className='card-info'>
+                        <h4>{info.title}</h4>
                         <div className='when-where'>
                             <p>{info.domain}</p>
                             {/*TODO -get actual date*/}
-                            <p>Sept 20th</p>
+                            <p>{info.created}</p>
                         </div>
+                    </div>
                 </div>
 
-              </div>
-            : <div className='photolessCard'>
-                <p>{info.domain}</p>
-                <p>{info.title}</p>
-              </div>}
+                : <div className='photolessCard'>
+                    <h4>{info.title}</h4>
+                    <div className='when-where'>
+                        <p>{info.domain}</p>
+                        <p>{info.created}</p>
+                    </div>
+                </div>}
+        </a>
     </li>
-    </a>
 );
 
 NewsCard.propTypes = {
@@ -35,4 +38,3 @@ NewsCard.propTypes = {
 
 export default NewsCard;
 
-// <img src={info.preview.images[0].source.url} alt='img' />

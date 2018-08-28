@@ -11,7 +11,7 @@ const hrStyles = {
 
 class Header extends Component {
     state = {
-        selected: null
+        selected: 'worldnews'
     }
 
     handleSelected = (category) => {
