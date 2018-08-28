@@ -39,7 +39,7 @@ class Home extends Component {
         const { data, errorMessage }  = this.props;
         return (
             <div style={{textAlign: 'center'}}>
-                <h1>RECENT NEWS</h1>
+                <h1 className='title'>RECENT NEWS</h1>
                 <Header handleFetch={this.handleFetch} />
 
                 {/*Tell User to select a category, or display the news*/}

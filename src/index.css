@@ -1,7 +1,7 @@
 /* Core Styles */
 body {
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
   font-family: sans-serif;
 }
 
@@ -17,10 +17,19 @@ li {
   list-style: none;
 }
 
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+/*-------TITLE------------------*/
+.title {
+  margin: 1em 0;
+}
+
 /*------------HEADER------------*/
 .header {
   margin: 0 auto;
-  width: 290px;
+  width: 295px;
 }
 
 /* Buttons */
@@ -30,6 +39,7 @@ li {
 
 #btn {
   padding: 8px 10px;
+  box-shadow: none;
 }
 
 .MuiButton-label-2 {
@@ -40,12 +50,10 @@ li {
   height: 6px;
   border: none;
   margin: -5px 3px;
-  background: #f5f5f5;
+  background: white;
   border-radius: 5px;
 }
 
-
-/*-------------News Display---------------*/
 .nav {
   display: flex;
   justify-content: space-between;
@@ -53,29 +61,44 @@ li {
   width: 100%;
 }
 
-img {
-  width: 500px;
+/*-------------News Display---------------*/
+
+/* The Masonry Container */
+.masonry {
+  margin: 1em;
+  column-gap: 1em;
+}
+
+.item {
+  background: #f5f5f5;
+  display: inline-block;
+  margin: 0 0 1em;
+  width: 100%;
+  border-radius: 10px;
+  transition: all .2s linear;
+  box-sizing: border-box;
+}
+.item:hover {
+  filter: brightness(90%);
 }
 
 /* NewsCard */
 .card {
   color: black;
-  background-position: 0 -60px !important;
-  background-size: cover !important;
-  height: 260px;
   position: relative;
   border-radius: 10px;
-  width: 80%;
-  margin: 1em auto;
-  transition: transform .2s linear;
+  width: 100%;
+  margin: 0;
+  min-height: 200px;
 }
-.card:hover {
-  transform: scale(1.01);
+
+img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
 }
 
 .card-info {
-  position: absolute;
-  bottom: -2px;
+  bottom: 0px;
   width: 100%;
   background: #f5f5f5;
   border-radius: 0 0 10px 10px;
@@ -83,17 +106,32 @@ img {
   box-sizing: border-box;
 }
 
-.card-info h3 {
+.card-info h4 {
   margin: 0;
 }
 
 .when-where {
   display: flex;
   justify-content: space-between;
+  padding-top: 5px;
 }
 
 .when-where p {
-  margin: 5px 0;
+  margin: 0;
+}
+
+/*-----PhotoLess Card-----*/
+
+.photolessCard {
+  box-sizing: border-box;
+  color: black;
+  position: relative;
+  border-radius: 10px;
+  width: 100%;
+  margin: 0;
+  background: #f5f5f5;
+  transition: transform .2s linear;
+  padding: 10px 11px;
 }
 
 
@@ -114,9 +152,30 @@ img {
   .MuiButton-label-2 {
     font-size: 1em;
   }
+
+  .masonry {
+    margin-top: 2em;
+  }
 }
 
-@media screen and (min-width: 900px) {
-  /*-------HEADER---------*/
-
+/* Masonry on small screens */
+@media only screen and (min-width: 540px) {
+  .masonry {
+    column-count: 2;
+  }
 }
+
+/* Masonry on larger screens */
+@media only screen and (min-width: 900px) {
+  .masonry {
+    column-count: 3;
+    max-width: 1200px;
+  }
+}
+
+@media only screen and (min-width: 1240px) {
+  .masonry {
+    margin: 2em auto;
+  }
+}
+
