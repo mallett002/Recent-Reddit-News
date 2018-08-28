@@ -21,3 +21,14 @@ export const getColor = (str) => {
     if (upper === 'POLITICS') return '#70ab70';
     if (upper === 'UPLIFTING') return '#ad5454';
 };
+
+// returns a date string like "Aug 28"
+export const getDate = (seconds) => {
+    const ms = seconds * 1000;
+    const date = new Date(ms);
+    const timeString = date.toUTCString();
+    const timeArray = timeString.split(" ").slice(0, 3);
+    return `${timeArray[2]} ${timeArray[1]}`;
+}
+
+

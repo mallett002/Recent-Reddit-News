@@ -16,3 +16,12 @@ NewsDisplay.propTypes = {
 };
 
 export default NewsDisplay;
+
+
+// choose better colors.
+// expand bar under buttons that make background color
+// make "More News option"
+// #363237
+// #2D4262
+// #73605B
+// #D09683

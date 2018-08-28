@@ -38,7 +38,7 @@ class Home extends Component {
     render() {
         const { data, errorMessage }  = this.props;
         return (
-            <div style={{textAlign: 'center'}}>
+            <div className='app'>
                 <h1 className='title'>RECENT NEWS</h1>
                 <Header handleFetch={this.handleFetch} />
 

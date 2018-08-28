@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { getDate } from '../constants/constants';
 
 // If there is an image available render a NewsCard with an image.
 // Otherwise render an imageless NewsCard
@@ -15,8 +16,7 @@ const NewsCard = ({ info }) => (
                         <h4>{info.title}</h4>
                         <div className='when-where'>
                             <p>{info.domain}</p>
-                            {/*TODO -get actual date*/}
-                            <p>{info.created}</p>
+                            <p>{getDate(info.created)}</p>
                         </div>
                     </div>
                 </div>
@@ -25,7 +25,7 @@ const NewsCard = ({ info }) => (
                     <h4>{info.title}</h4>
                     <div className='when-where'>
                         <p>{info.domain}</p>
-                        <p>{info.created}</p>
+                        <p>{getDate(info.created)}</p>
                     </div>
                 </div>}
         </a>
