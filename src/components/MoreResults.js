@@ -13,7 +13,8 @@ const MoreResults = ({ subreddit, loadMore }) => (
 );
 
 MoreResults.propTypes = {
-    subreddit: PropTypes.string.isRequired
+    subreddit: PropTypes.string.isRequired,
+    loadMore: PropTypes.func.isRequired
 };
 
 export default MoreResults;

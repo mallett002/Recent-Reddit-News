@@ -33,7 +33,8 @@ class NewsDisplay extends Component {
 
 
 NewsDisplay.propTypes = {
-    data: PropTypes.object.isRequired
+    data: PropTypes.object.isRequired,
+    itemCount: PropTypes.number.isRequired
 };
 
 export default NewsDisplay;
