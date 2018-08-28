@@ -17,7 +17,7 @@ const NewsType = ({ child, handleFetch, category, buttonColor, handleClick, sele
             onClick={() => handleClick(category)}
             style={Object.assign({}, 
                 { backgroundColor: buttonColor, color: 'white' },
-                selected === category && { padding: '13px 14px' }
+                selected === category && { padding: '9px 14px 17px 12px' }
             )} 
             variant="contained">
             {child}

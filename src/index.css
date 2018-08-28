@@ -24,6 +24,19 @@ h1, h2, h3, h4, h5 {
 /*-------TITLE------------------*/
 .title {
   margin: 1em 0;
+  text-align: center;
+  color: white;
+}
+
+.recent {
+  color: #de7a21;
+  padding: 5px;
+}
+
+.news {
+    background:#de7a21;;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 /*------------HEADER------------*/
@@ -49,9 +62,10 @@ h1, h2, h3, h4, h5 {
 .header-hr {
   height: 6px;
   border: none;
-  margin: -5px 3px;
   background: white;
   border-radius: 5px;
+  position: relative;
+  bottom: 13px;
 }
 
 .nav {
@@ -134,6 +148,16 @@ img {
   padding: 10px 11px;
 }
 
+/* ----------MoreResults Button --------*/
+.more-results {
+  margin: 1em;
+}
+
+#moreResults {
+  width: 100%;
+}
+
+
 
 /*--------MEDIA QUERIES---------------*/
 @media screen and (min-width: 330px) {
@@ -163,6 +187,11 @@ img {
   .masonry {
     column-count: 2;
   }
+
+  .header {
+    margin: 0;
+    margin-left: 1em;
+  }
 }
 
 /* Masonry on larger screens */
@@ -171,11 +200,33 @@ img {
     column-count: 3;
     max-width: 1200px;
   }
+
+  .more-results {
+    text-align: center;
+  }
+
+  #moreResults {
+    width: 260px;
+  }
 }
 
 @media only screen and (min-width: 1240px) {
   .masonry {
     margin: 2em auto;
+  }
+
+  .header {
+    width: 1200px;
+    margin: 2em auto;
+  }
+
+  .nav {
+    justify-content: flex-start;
+  }
+
+  .navlink {
+    margin: 0;
+    margin-right: 1em;
   }
 }
 

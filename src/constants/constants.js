@@ -16,8 +16,19 @@ export const getEndpoint = (category) => {
 
 export const getColor = (str) => {
     const upper = str.toUpperCase();
-    if (upper === 'USNEWS') return '#2196f3';
-    if (upper === 'SPORTS') return '#e29f30';
-    if (upper === 'POLITICS') return '#70ab70';
-    if (upper === 'UPLIFTING') return '#ad5454';
+    if (upper === 'WORLDNEWS') return '#DE7A22';
+    if (upper === 'SPORTS') return '#F4CC70';
+    if (upper === 'POLITICS') return '#6AB187';
+    if (upper === 'UPLIFTINGNEWS') return '#20948B';
 };
+
+// returns a date string like "Aug 28"
+export const getDate = (seconds) => {
+    const ms = seconds * 1000;
+    const date = new Date(ms);
+    const timeString = date.toUTCString();
+    const timeArray = timeString.split(" ").slice(0, 3);
+    return `${timeArray[2]} ${timeArray[1]}`;
+}
+
+
