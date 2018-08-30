@@ -1,6 +1,6 @@
 // function that gets corresponding news category endpoint
 export const getEndpoint = (category) => {
-    switch(category) {
+    switch (category) {
         case 'uplifting':
             return 'UpliftingNews/hot/.json?raw_json=1';
         case 'sports':
@@ -9,9 +9,9 @@ export const getEndpoint = (category) => {
             return 'worldnews/hot/.json?raw_json=1';
         case 'politics':
             return 'politics/hot/.json?raw_json=1';
-        default: 
+        default:
             return 'USNEWS/hot/.json?raw_json=1';
-        }  
+    }
 };
 
 export const getColor = (str) => {
@@ -31,4 +31,22 @@ export const getDate = (seconds) => {
     return `${timeArray[2]} ${timeArray[1]}`;
 }
 
+// gets the video url or returns false
+export const getVid = (item) => {
+    if (item.hasOwnProperty("media") && item.media !== null 
+        && item.media.hasOwnProperty("reddit_video")
+        && item.media.reddit_video !== undefined) {
+            return item.media.reddit_video.scrubber_media_url;
 
+    } else if (item.hasOwnProperty("preview") && item.preview.hasOwnProperty("reddit_video_preview")
+            && item.preview.reddit_video_preview.scrubber_media_url !== undefined) {
+                return item.preview.reddit_video_preview.scrubber_media_url;
+
+    } else if (item.hasOwnProperty("secure_media") && item.secure_media !== null 
+        && item.secure_media.hasOwnProperty("reddit_video")
+        && item.secure_media.reddit_video !== undefined) {
+            return item.secure_media.reddit_video.scrubber_media_url;
+    } else {
+        return false;
+    }
+}
