@@ -96,7 +96,14 @@ h1, h2, h3, h4, h5 {
   filter: brightness(90%);
 }
 
-/* NewsCard */
+/* ------Video Card-------*/
+video {
+  border-radius: 10px 10px 0 0;
+  display: block;
+}
+
+
+/* -------NewsCard -------*/
 .card {
   color: black;
   position: relative;
