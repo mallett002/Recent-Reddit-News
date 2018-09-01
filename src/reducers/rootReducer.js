@@ -15,7 +15,8 @@ const rootReducer = (state = initialState, action) => {
         case FETCH_NEWS_BEGIN: 
             return {
                 ...state,
-                isLoading: true
+                isLoading: true,
+                errorMessage: null
             }
         case FETCH_NEWS_SUCCESS:
             return {
