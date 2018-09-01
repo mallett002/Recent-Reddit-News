@@ -1,9 +1,4 @@
 /* Core Styles */
-*,
-*:before,
-*:after {
-  box-sizing: border-box !important;
-}
 
 body {
   margin: 0 auto;
@@ -13,14 +8,6 @@ body {
 
 a {
   text-decoration: none;
-}
-
-ul {
-  padding: 0;
-}
-
-li {
-  list-style: none;
 }
 
 h1, h2, h3, h4, h5 {
@@ -83,17 +70,27 @@ h1, h2, h3, h4, h5 {
 
 /*-------------News Display---------------*/
 
+/*-----Error Message-----*/
+.error {
+  text-align: center;
+  padding: 0 20px;
+}
+
+.error h3 {
+  font-size: 18px;
+}
+
 /* The Masonry Container */
 .masonry {
   display: flex;
   width: auto;
-  padding-right: 10px;
+  padding-right: 16px;
   max-width: 1200px;
   margin: auto;
 }
 
 .masonry-grid-column {
-  padding-left: 10px; /* gutter size */
+  padding-left: 16px; /* gutter size */
   background-clip: padding-box;
 }
 
@@ -103,7 +100,7 @@ h1, h2, h3, h4, h5 {
   width: 100%;
   border-radius: 10px;
   transition: all .2s linear;
-  margin: 6px 0;
+  margin: 9px 0;
 }
 .item:hover {
   filter: brightness(90%);
@@ -210,10 +207,11 @@ img {
   }
 }
 
-@media only screen and (min-width: 557px) {
-}
-
 @media only screen and (min-width: 900px) {
+  .error h3 {
+    font-size: 1.5em;
+  }
+
   .more-results {
     text-align: center;
   }
@@ -224,6 +222,15 @@ img {
 }
 
 @media only screen and (min-width: 1240px) {
+
+  .title-wrapper {
+    margin-top: 5em;
+  }
+
+  .title {
+    font-size: 2.5em;
+  }
+
   .masonry {
     margin: 2em auto;
   }

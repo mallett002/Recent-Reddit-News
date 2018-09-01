@@ -23,7 +23,7 @@ const fetchFailure = (error) => ({
 // filterBy will filter the news categories.
 export const fetchNews = (endpoint) => dispatch => {
     dispatch(beginFetch());
-    fetch(`https://www.reddit.com/r/${endpoint}?limit=100`)
+    fetch(`https://www.reddit.com/r/${endpoint}`)
         .then(handleErrors)
         .then(res => res.json())
         .then(json => {
@@ -35,7 +35,7 @@ export const fetchNews = (endpoint) => dispatch => {
 // Handle Errors
 function handleErrors(response) {
     if (!response.ok) {
-        throw Error(response.statusText);
+        throw Error(response);
     }
     return response;
 }

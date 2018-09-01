@@ -2,7 +2,7 @@
 export const getEndpoint = (category) => {
     switch (category) {
         case 'uplifting':
-            return 'UpliftingNews/hot/.json?raw_json=1';
+            return 'Uplift';
         case 'sports':
             return 'sports/hot/.json?raw_json=1';
         case 'worldnews':
