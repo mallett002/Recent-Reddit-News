@@ -33,19 +33,19 @@ export const getDate = (seconds) => {
 
 // gets the video url or returns false
 export const getVid = (item) => {
-    if (item.hasOwnProperty("media") && item.media !== null 
+    if (item.hasOwnProperty("media") && item.media !== null
         && item.media.hasOwnProperty("reddit_video")
         && item.media.reddit_video !== undefined) {
-            return item.media.reddit_video.scrubber_media_url;
+        return item.media.reddit_video.scrubber_media_url;
 
     } else if (item.hasOwnProperty("preview") && item.preview.hasOwnProperty("reddit_video_preview")
-            && item.preview.reddit_video_preview.scrubber_media_url !== undefined) {
-                return item.preview.reddit_video_preview.scrubber_media_url;
+        && item.preview.reddit_video_preview.scrubber_media_url !== undefined) {
+        return item.preview.reddit_video_preview.scrubber_media_url;
 
-    } else if (item.hasOwnProperty("secure_media") && item.secure_media !== null 
+    } else if (item.hasOwnProperty("secure_media") && item.secure_media !== null
         && item.secure_media.hasOwnProperty("reddit_video")
         && item.secure_media.reddit_video !== undefined) {
-            return item.secure_media.reddit_video.scrubber_media_url;
+        return item.secure_media.reddit_video.scrubber_media_url;
     } else {
         return false;
     }

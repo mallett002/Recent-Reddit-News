@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { getDate } from '../constants/constants';
 
 const VideoCard = ({ info, src }) => (
-    <li className='item'>
+    <div className='item'>
         <a href={info.url} target="_blank" rel="noopener noreferrer">
             <div className='card'>
                 <div className='video-wrapper'>
@@ -21,7 +21,7 @@ const VideoCard = ({ info, src }) => (
                 </div>
             </div>
         </a>
-    </li>
+    </div>
 );
 
 VideoCard.propTypes = {
