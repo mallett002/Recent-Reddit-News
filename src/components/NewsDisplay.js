@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import NewsCard from './NewsCard';
 import MoreResults from './MoreResults';
+import Masonry from 'react-masonry-css';
+import NewsCard from './NewsCard';
 import VideoCard from './VideoCard';
 import { getVid } from '../constants/constants';
 
-class NewsDisplay extends Component {
+const breakpointColumns = {
+    default: 4,
+    1100: 3,
+    900: 2,
+    500: 1
+};
 
-    componentDidUpdate() {
-        const { data } = this.props;
-        console.log("media:", data.json[0].media); 
-    }
+class NewsDisplay extends Component {
 
     handleLoad = () => {
         this.props.loadMore();
@@ -21,21 +24,25 @@ class NewsDisplay extends Component {
         const { itemCount } = this.props;
         return (
             <div>
-                <ul className='masonry'>
+                <Masonry
+                    breakpointCols={breakpointColumns}
+                    className='masonry'
+                    columnClassName='masonry-grid-column'>
                     {data.json.slice(0, itemCount).map((item, index) => (
-                    getVid(item)
-                    ? <VideoCard src={getVid(item)} info={item} key={index} />
-                    : <NewsCard info={item} key={index} />
+                        getVid(item)
+                            ? <VideoCard src={getVid(item)} info={item} key={index} />
+                            : <NewsCard info={item} key={index} />
                     ))}
-                </ul>
+                </Masonry>
+
                 <div className='more-results'>
-                    {itemCount < 25 && 
-                    <MoreResults
-                        subreddit={data.json[0].subreddit}
-                        loadMore={this.handleLoad}
-                    />}
+                    {itemCount < 25 &&
+                        <MoreResults
+                            subreddit={data.json[0].subreddit}
+                            loadMore={this.handleLoad}
+                        />}
                 </div>
-            </div>
+            </div >
         )
     }
 }

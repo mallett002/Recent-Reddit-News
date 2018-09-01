@@ -56,7 +56,7 @@ class Home extends Component {
 
                 <div className='title-wrapper'>
                     <h1 className='title'>
-                        <span className='recent'>RECENT</span> 
+                        <span className='recent'>REDDIT</span> 
                         <span className='news'>NEWS</span>
                     </h1>
                 </div>

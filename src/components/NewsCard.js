@@ -5,7 +5,7 @@ import { getDate } from '../constants/constants';
 // If there is an image available render a NewsCard with an image.
 // Otherwise render an imageless NewsCard
 const NewsCard = ({ info }) => (
-    <li className='item'>
+    <div className='item'>
         <a href={info.url} target="_blank" rel="noopener noreferrer">
             {info.preview
                 ? <div className='card'>
@@ -29,7 +29,7 @@ const NewsCard = ({ info }) => (
                     </div>
                 </div>}
         </a>
-    </li>
+    </div>
 );
 
 NewsCard.propTypes = {
