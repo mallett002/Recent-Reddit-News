@@ -2,21 +2,21 @@
 export const getEndpoint = (category) => {
     switch (category) {
         case 'uplifting':
-            return 'Uplift';
+            return 'UpliftingNews/hot/.json?raw_json=1';
         case 'sports':
             return 'sports/hot/.json?raw_json=1';
-        case 'worldnews':
-            return 'worldnews/hot/.json?raw_json=1';
+        case 'interesting':
+            return 'interesting/hot/.json?raw_json=1';
         case 'politics':
             return 'politics/hot/.json?raw_json=1';
         default:
-            return 'USNEWS/hot/.json?raw_json=1';
+            return 'interesting/hot/.json?raw_json=1';
     }
 };
 
 export const getColor = (str) => {
     const upper = str.toUpperCase();
-    if (upper === 'WORLDNEWS') return '#DE7A22';
+    if (upper === 'INTERESTING') return '#DE7A22';
     if (upper === 'SPORTS') return '#F4CC70';
     if (upper === 'POLITICS') return '#6AB187';
     if (upper === 'UPLIFTINGNEWS') return '#20948B';

@@ -18,9 +18,9 @@ class Home extends Component {
         itemCount: 10
     }
 
-    // Fetch world news when component mounts
+    // Fetch interesting news when component mounts
     componentDidMount() {
-        this.props.fetchNews(getEndpoint('worldnews'));
+        this.props.fetchNews(getEndpoint('interesting'));
     }
 
     // Fetch when click on different category buttons
