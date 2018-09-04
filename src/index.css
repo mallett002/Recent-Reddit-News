@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5 {
 /*------------HEADER------------*/
 .header {
   margin: 0 auto;
-  width: 295px;
+  width: 291px;
 }
 
 /* Buttons */
@@ -43,22 +43,24 @@ h1, h2, h3, h4, h5 {
   margin: 0;
 }
 
-#btn {
-  padding: 8px 10px;
+.btn {
+  padding: 9px;
   box-shadow: none;
-}
-
-.MuiButton-label-2 {
   font-size: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
 }
 
 .header-hr {
   height: 6px;
+  width: 99%;
   border: none;
   background: white;
   border-radius: 5px;
   position: relative;
-  bottom: 13px;
+  bottom: 14px;
 }
 
 .nav {
@@ -177,27 +179,29 @@ img {
 
 
 /*--------MEDIA QUERIES---------------*/
-@media screen and (min-width: 330px) {
+@media screen and (min-width: 373px) {
   /*-----HEADER-------*/
   .header {
-    width: 310px;
+    width: 341px;
+  }
+
+  .btn {
+    font-size: 12px;
   }
 }
 
 @media screen and (min-width: 500px) {
   /*-----HEADER--------*/
   .header {
-    width: 400px;
+    width: 401px;
   }
 
-  .MuiButton-label-2 {
-    font-size: 1em;
+  .btn {
+    padding: 12px 14px;
   }
 }
 
 
-
-/* Masonry layout on larger screens---------- */
 @media only screen and (min-width: 540px) {
 
   /*header on larger screens*/
@@ -248,5 +252,6 @@ img {
     margin: 0;
     margin-right: 1em;
   }
+
 }
 
