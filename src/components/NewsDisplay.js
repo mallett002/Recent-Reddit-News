@@ -52,7 +52,8 @@ class NewsDisplay extends Component {
 
 NewsDisplay.propTypes = {
     data: PropTypes.object,
-    itemCount: PropTypes.number.isRequired
+    itemCount: PropTypes.number.isRequired, 
+    error: PropTypes.object
 };
 
 export default NewsDisplay;
