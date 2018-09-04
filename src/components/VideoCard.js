@@ -7,7 +7,7 @@ const VideoCard = ({ info, src }) => (
         <a href={info.url} target="_blank" rel="noopener noreferrer">
             <div className='card'>
                 <div className='video-wrapper'>
-                    <video width='100%' height='auto' controls>
+                    <video width='100%' height='auto' controls poster={info.preview.images[0].source.url}>
                         <source src={src} type="video/mp4" />
                         <source src={src} type="video/webm" />
                     </video>
